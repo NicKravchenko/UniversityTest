@@ -32,13 +32,13 @@ namespace UniversityTest
             this.CloseSession = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Quit = new System.Windows.Forms.Button();
-            this.SubjectsDataGrid = new System.Windows.Forms.DataGridView();
+            this.UsersDataGrid = new System.Windows.Forms.DataGridView();
             this.Back = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.EditById = new System.Windows.Forms.Button();
             this.FindById = new System.Windows.Forms.Button();
             this.AddNew = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.UserIdEditText = new System.Windows.Forms.TextBox();
             this.BirthDateText = new System.Windows.Forms.TextBox();
             this.CareerIdText = new System.Windows.Forms.TextBox();
             this.CityText = new System.Windows.Forms.TextBox();
@@ -58,8 +58,12 @@ namespace UniversityTest
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.UserIdDeleteText = new System.Windows.Forms.TextBox();
+            this.DeleteById = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubjectsDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsersDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,14 +97,15 @@ namespace UniversityTest
             this.Quit.UseVisualStyleBackColor = true;
             this.Quit.Click += new System.EventHandler(this.Quit_Click);
             // 
-            // SubjectsDataGrid
+            // UsersDataGrid
             // 
-            this.SubjectsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SubjectsDataGrid.Location = new System.Drawing.Point(12, 12);
-            this.SubjectsDataGrid.Name = "SubjectsDataGrid";
-            this.SubjectsDataGrid.Size = new System.Drawing.Size(607, 426);
-            this.SubjectsDataGrid.TabIndex = 4;
-            this.SubjectsDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SubjectsDataGrid_CellContentClick);
+            this.UsersDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UsersDataGrid.Location = new System.Drawing.Point(12, 12);
+            this.UsersDataGrid.Name = "UsersDataGrid";
+            this.UsersDataGrid.Size = new System.Drawing.Size(607, 426);
+            this.UsersDataGrid.TabIndex = 4;
+            this.UsersDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SubjectsDataGrid_CellContentClick);
+            this.UsersDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SubjectsDataGrid_CellDoubleClick);
             // 
             // Back
             // 
@@ -115,10 +120,12 @@ namespace UniversityTest
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.DeleteById);
             this.panel1.Controls.Add(this.EditById);
             this.panel1.Controls.Add(this.FindById);
             this.panel1.Controls.Add(this.AddNew);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.UserIdDeleteText);
+            this.panel1.Controls.Add(this.UserIdEditText);
             this.panel1.Controls.Add(this.BirthDateText);
             this.panel1.Controls.Add(this.CareerIdText);
             this.panel1.Controls.Add(this.CityText);
@@ -126,6 +133,8 @@ namespace UniversityTest
             this.panel1.Controls.Add(this.PasswordText);
             this.panel1.Controls.Add(this.NicknameText);
             this.panel1.Controls.Add(this.LastNameText);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label7);
@@ -138,9 +147,9 @@ namespace UniversityTest
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(622, 60);
+            this.panel1.Location = new System.Drawing.Point(625, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 291);
+            this.panel1.Size = new System.Drawing.Size(163, 339);
             this.panel1.TabIndex = 7;
             // 
             // EditById
@@ -151,6 +160,7 @@ namespace UniversityTest
             this.EditById.TabIndex = 8;
             this.EditById.Text = "Edit";
             this.EditById.UseVisualStyleBackColor = true;
+            this.EditById.Click += new System.EventHandler(this.EditById_Click);
             // 
             // FindById
             // 
@@ -171,12 +181,12 @@ namespace UniversityTest
             this.AddNew.UseVisualStyleBackColor = true;
             this.AddNew.Click += new System.EventHandler(this.AddNew_Click);
             // 
-            // textBox1
+            // UserIdEditText
             // 
-            this.textBox1.Location = new System.Drawing.Point(77, 337);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(52, 20);
-            this.textBox1.TabIndex = 7;
+            this.UserIdEditText.Location = new System.Drawing.Point(77, 337);
+            this.UserIdEditText.Name = "UserIdEditText";
+            this.UserIdEditText.Size = new System.Drawing.Size(52, 20);
+            this.UserIdEditText.TabIndex = 7;
             // 
             // BirthDateText
             // 
@@ -334,13 +344,48 @@ namespace UniversityTest
             this.label1.TabIndex = 6;
             this.label1.Text = "First Name";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(12, 423);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(18, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "ID";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(11, 400);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Delete by static Id";
+            // 
+            // UserIdDeleteText
+            // 
+            this.UserIdDeleteText.Location = new System.Drawing.Point(36, 420);
+            this.UserIdDeleteText.Name = "UserIdDeleteText";
+            this.UserIdDeleteText.Size = new System.Drawing.Size(52, 20);
+            this.UserIdDeleteText.TabIndex = 7;
+            // 
+            // DeleteById
+            // 
+            this.DeleteById.Location = new System.Drawing.Point(94, 418);
+            this.DeleteById.Name = "DeleteById";
+            this.DeleteById.Size = new System.Drawing.Size(46, 23);
+            this.DeleteById.TabIndex = 8;
+            this.DeleteById.Text = "Delete";
+            this.DeleteById.UseVisualStyleBackColor = true;
+            this.DeleteById.Click += new System.EventHandler(this.DeleteById_Click);
+            // 
             // UsersModification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.SubjectsDataGrid);
+            this.Controls.Add(this.UsersDataGrid);
             this.Controls.Add(this.Quit);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Back);
@@ -349,7 +394,7 @@ namespace UniversityTest
             this.Text = "UsersModification";
             this.Load += new System.EventHandler(this.UsersModification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubjectsDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsersDataGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -361,7 +406,7 @@ namespace UniversityTest
         private System.Windows.Forms.Button CloseSession;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Quit;
-        private System.Windows.Forms.DataGridView SubjectsDataGrid;
+        private System.Windows.Forms.DataGridView UsersDataGrid;
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
@@ -379,7 +424,7 @@ namespace UniversityTest
         private System.Windows.Forms.Button EditById;
         private System.Windows.Forms.Button FindById;
         private System.Windows.Forms.Button AddNew;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox UserIdEditText;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
@@ -387,5 +432,9 @@ namespace UniversityTest
         private System.Windows.Forms.TextBox CityText;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button DeleteById;
+        private System.Windows.Forms.TextBox UserIdDeleteText;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
     }
 }
