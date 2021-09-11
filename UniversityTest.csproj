@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Career.cs">
-      <DependentUpon>UniversityTestBD.tt</DependentUpon>
+      <DependentUpon>UniversityTest.tt</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\AdminMainMenu.cs">
       <SubType>Form</SubType>
@@ -85,25 +85,25 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemRole.cs">
-      <DependentUpon>UniversityTestBD.tt</DependentUpon>
+      <DependentUpon>UniversityTest.tt</DependentUpon>
     </Compile>
     <Compile Include="SystemUser.cs">
-      <DependentUpon>UniversityTestBD.tt</DependentUpon>
+      <DependentUpon>UniversityTest.tt</DependentUpon>
     </Compile>
-    <Compile Include="UniversityTestBD.Context.cs">
+    <Compile Include="UniversityTest.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UniversityTestBD.Context.tt</DependentUpon>
+      <DependentUpon>UniversityTest.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="UniversityTestBD.cs">
+    <Compile Include="UniversityTest.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UniversityTestBD.tt</DependentUpon>
+      <DependentUpon>UniversityTest.tt</DependentUpon>
     </Compile>
-    <Compile Include="UniversityTestBD.Designer.cs">
+    <Compile Include="UniversityTest.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UniversityTestBD.edmx</DependentUpon>
+      <DependentUpon>UniversityTest.edmx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\Admin\AdminMainMenu.resx">
       <DependentUpon>AdminMainMenu.cs</DependentUpon>
@@ -137,12 +137,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="UniversityTestBD.edmx">
+    <EntityDeploy Include="UniversityTest.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UniversityTestBD.Designer.cs</LastGenOutput>
+      <LastGenOutput>UniversityTest.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="UniversityTestBD.edmx.diagram">
-      <DependentUpon>UniversityTestBD.edmx</DependentUpon>
+    <None Include="UniversityTest.edmx.diagram">
+      <DependentUpon>UniversityTest.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -153,17 +153,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LogoIntecPNG.png" />
-    <Content Include="UniversityTestBD.Context.tt">
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UniversityTest.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UniversityTestBD.edmx</DependentUpon>
-      <LastGenOutput>UniversityTestBD.Context.cs</LastGenOutput>
+      <DependentUpon>UniversityTest.edmx</DependentUpon>
+      <LastGenOutput>UniversityTest.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="UniversityTestBD.tt">
+    <Content Include="UniversityTest.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UniversityTestBD.edmx</DependentUpon>
-      <LastGenOutput>UniversityTestBD.cs</LastGenOutput>
+      <DependentUpon>UniversityTest.edmx</DependentUpon>
+      <LastGenOutput>UniversityTest.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

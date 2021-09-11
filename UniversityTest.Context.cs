@@ -13,10 +13,10 @@ namespace UniversityTest
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UniversityTestEntities : DbContext
+    public partial class UniversityTestEntities1 : DbContext
     {
-        public UniversityTestEntities()
-            : base("name=UniversityTestEntities")
+        public UniversityTestEntities1()
+            : base("name=UniversityTestEntities1")
         {
         }
     

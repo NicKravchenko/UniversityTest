@@ -25,6 +25,6 @@ namespace UniversityTest
     public class Forms : Form
     {
         public static SystemUser GlobalUser = new SystemUser();
-        public static UniversityTestEntities DB = new UniversityTestEntities();
+        public static UniversityTestEntities1 DB = new UniversityTestEntities1();
     }
 }
